@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gian Gofalludhin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('img/BG.jpg') no-repeat center center/cover;
+            animation: fadeIn 1.5s ease-in-out;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .profile-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+            opacity: 1; /* Awal terlihat */
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk efek smooth */
+        }
+
+        .profile-header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(108, 92, 231, 0.85);
+            color: white;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        .profile-name {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .profile-info {
+            font-size: 1em;
+            opacity: 0.8;
+        }
+
+        .profile-body {
+            padding: 20px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .info i {
+            font-size: 1.2em;
+            color: #6c5ce7;
+            margin-right: 10px;
+        }
+
+        .info h3 {
+            font-size: 1em;
+            color: #6c5ce7;
+            margin-bottom: 5px;
+        }
+
+        .info p {
+            font-size: 1em;
+            color: #333;
+            opacity: 0.9;
+        }
+
+        .message-form {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .message-form h3 {
+            font-size: 1.2em;
+            color: #6c5ce7;
+            margin-bottom: 10px;
+        }
+
+        .message-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .message-form button {
+            padding: 10px 20px;
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .message-form button:hover {
+            background-color: #5b4fc2;
+        }
+
+        /* Efek saat scroll */
+        .fade-out {
+            opacity: 0; /* Menghilang */
+            transform: translateY(-20px); /* Bergerak sedikit ke atas */
+        }
+
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="profile-card" id="profile-card">
+        <div class="profile-header">
+            <img src="img/Gian.jpeg" alt="Profile Picture" class="profile-img">
+            <h1 class="profile-name">Gian Gofalludhin</h1>
+            <p class="profile-info">12 RPL | SMK Negeri 1 Subang</p>
+        </div>
+        
+        <div class="profile-body">
+            <div class="info">
+                <i class="fas fa-birthday-cake"></i>
+                <div>
+                    <h3>Umur:</h3>
+                    <p>17 Tahun</p>
+                </div>
+            </div>
+            <div class="info">
+                <i class="fas fa-heart"></i>
+                <div>
+                    <h3>Hobi:</h3>
+                    <p>Dengerin Musik</p>
+                </div>
+            </div>
+            <div class="info">
+                <i class="fas fa-quote-left"></i>
+                <div>
+                    <h3>Moto:</h3>
+                    <p>"Tidurlah sebelum di tidurkan"</p>
+                </div>
+            </div>
+        </div>
+        <div class="message-form">
+            <h3>Kirim Pesan</h3>
+            <form action="mailto:giangofalludhin@gmail.com" method="POST" enctype="text/plain">
+                <textarea name="message" rows="4" placeholder="Pesan" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const profileCard = document.getElementById('profile-card');
+            const scrollPosition = window.scrollY;
+
+            // Jika scroll ke bawah lebih dari 50px
+            if (scrollPosition > 50) {
+                profileCard.classList.add('fade-out');
+            } else {
+                profileCard.classList.remove('fade-out');
+            }
+        });
+    </script>
+
+</body>
+</html>
