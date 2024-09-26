@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gian Gofalludhin</title>
+    <title>Gian Gupal
+    </title>
     <style>
         * {
             margin: 0;
@@ -19,7 +20,6 @@
             min-height: 100vh;
             background: url('img/BG.jpg') no-repeat center center/cover;
             animation: fadeIn 1.5s ease-in-out;
-            overflow: hidden;
         }
 
         @keyframes fadeIn {
@@ -36,23 +36,33 @@
         }
 
         .profile-card {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.9); /* Transparansi untuk efek elegan */
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih jelas */
             overflow: hidden;
             max-width: 400px;
             width: 100%;
             margin: 20px;
-            opacity: 1; /* Awal terlihat */
-            transform: translateY(0);
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Transisi untuk efek smooth */
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .profile-header {
             text-align: center;
             padding: 40px 20px;
-            background-color: rgba(108, 92, 231, 0.85);
+            background-color: rgba(108, 92, 231, 0.85); /* Warna ungu dengan transparansi */
             color: white;
+            position: relative;
         }
 
         .profile-img {
@@ -103,6 +113,7 @@
             opacity: 0.9;
         }
 
+        /* Form untuk menulis pesan */
         .message-form {
             padding: 20px;
             background-color: #f0f0f0;
@@ -139,18 +150,12 @@
             background-color: #5b4fc2;
         }
 
-        /* Efek saat scroll */
-        .fade-out {
-            opacity: 0; /* Menghilang */
-            transform: translateY(-20px); /* Bergerak sedikit ke atas */
-        }
-
     </style>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="profile-card" id="profile-card">
+    <div class="profile-card">
         <div class="profile-header">
             <img src="img/Gian.jpeg" alt="Profile Picture" class="profile-img">
             <h1 class="profile-name">Gian Gofalludhin</h1>
@@ -180,8 +185,10 @@
                 </div>
             </div>
         </div>
+
+        <!-- Form Pesan -->
         <div class="message-form">
-            <h3>Kirim Pesan</h3>
+            <h3>Tulis Pesan untuk Gian:</h3>
             <form action="mailto:giangofalludhin@gmail.com" method="POST" enctype="text/plain">
                 <textarea name="message" rows="4" placeholder="Pesan" required></textarea>
                 <button type="submit">Kirim Pesan</button>
@@ -189,20 +196,6 @@
         </div>
 
     </div>
-
-    <script>
-        window.addEventListener('scroll', function() {
-            const profileCard = document.getElementById('profile-card');
-            const scrollPosition = window.scrollY;
-
-            // Jika scroll ke bawah lebih dari 50px
-            if (scrollPosition > 50) {
-                profileCard.classList.add('fade-out');
-            } else {
-                profileCard.classList.remove('fade-out');
-            }
-        });
-    </script>
 
 </body>
 </html>
