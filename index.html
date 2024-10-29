@@ -3,199 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gian Gupal
-    </title>
+    <title>Profil Gian Gopal</title>
     <style>
+        /* Font dan Reset Dasar */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
         }
 
         body {
+            font-family: 'Poppins', sans-serif;
+            background: #2f2f2f;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: url('img/BG.jpg') no-repeat center center/cover;
-            animation: fadeIn 1.5s ease-in-out;
+            color: #ffffff;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .profile-card {
-            background-color: rgba(255, 255, 255, 0.9); /* Transparansi untuk efek elegan */
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih jelas */
-            overflow: hidden;
-            max-width: 400px;
+        /* Container Profil */
+        .profile-container {
+            max-width: 450px;
             width: 100%;
-            margin: 20px;
-            animation: slideUp 1.5s ease-in-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .profile-header {
-            text-align: center;
+            background: #3b3b3b;
+            border-radius: 15px;
             padding: 40px 20px;
-            background-color: rgba(108, 92, 231, 0.85); /* Warna ungu dengan transparansi */
-            color: white;
-            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #e0e0e0;
         }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
+        /* Foto Profil */
+        .profile-picture {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
+            border: 4px solid #4e4e4e; /* Border default */
             object-fit: cover;
-            border: 5px solid #fff;
             margin-bottom: 20px;
-            background-color: #fff;
         }
 
-        .profile-name {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+        /* Info Profil */
+        .profile-info h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            animation: colorChange 3s infinite; /* Memperlambat animasi */
         }
 
-        .profile-info {
-            font-size: 1em;
-            opacity: 0.8;
+        .profile-info p {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin: 6px 0;
         }
 
-        .profile-body {
-            padding: 20px;
-        }
-
-        .info {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .info i {
-            font-size: 1.2em;
-            color: #6c5ce7;
-            margin-right: 10px;
-        }
-
-        .info h3 {
-            font-size: 1em;
-            color: #6c5ce7;
-            margin-bottom: 5px;
-        }
-
-        .info p {
-            font-size: 1em;
-            color: #333;
-            opacity: 0.9;
-        }
-
-        /* Form untuk menulis pesan */
-        .message-form {
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
+        /* Tombol Kirim Pesan */
+        .button-container {
             margin-top: 20px;
         }
 
-        .message-form h3 {
-            font-size: 1.2em;
-            color: #6c5ce7;
-            margin-bottom: 10px;
-        }
-
-        .message-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        .message-form button {
-            padding: 10px 20px;
-            background-color: #6c5ce7;
-            color: white;
-            border: none;
-            border-radius: 5px;
+        .button {
+            padding: 12px 30px;
+            border: 2px solid #800000; /* Border merah gelap */
+            border-radius: 25px;
+            background: linear-gradient(135deg, #4e4e4e, #6a6a6a);
+            color: #ffffff;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .message-form button:hover {
-            background-color: #5b4fc2;
+        .button:hover {
+            background: linear-gradient(135deg, #6a6a6a, #4e4e4e);
+            transform: translateY(-3px);
+            border-color: #ff1a1a; /* Border merah terang saat hover */
         }
 
+        /* Animasi Perubahan Warna Nama */
+        @keyframes colorChange {
+            0%, 100% {
+                color: #e0e0e0; /* Warna default */
+            }
+            50% {
+                color: #ff1a1a; /* Warna merah menyala */
+            }
+        }
     </style>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="profile-card">
-        <div class="profile-header">
-            <img src="img/Gian.jpeg" alt="Profile Picture" class="profile-img">
-            <h1 class="profile-name">Gian Gofalludhin</h1>
-            <p class="profile-info">12 RPL | SMK Negeri 1 Subang</p>
-        </div>
-        
-        <div class="profile-body">
-            <div class="info">
-                <i class="fas fa-birthday-cake"></i>
-                <div>
-                    <h3>Umur:</h3>
-                    <p>17 Tahun</p>
-                </div>
-            </div>
-            <div class="info">
-                <i class="fas fa-heart"></i>
-                <div>
-                    <h3>Hobi:</h3>
-                    <p>Dengerin Musik</p>
-                </div>
-            </div>
-            <div class="info">
-                <i class="fas fa-quote-left"></i>
-                <div>
-                    <h3>Moto:</h3>
-                    <p>"Tidurlah sebelum di tidurkan"</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Form Pesan -->
-        <div class="message-form">
-            <h3>Tulis Pesan untuk Gian:</h3>
-            <form action="mailto:giangofalludhin@gmail.com" method="POST" enctype="text/plain">
-                <textarea name="message" rows="4" placeholder="Pesan" required></textarea>
-                <button type="submit">Kirim Pesan</button>
-            </form>
-        </div>
-
+<div class="profile-container">
+    <img src="img/gian.jpeg" alt="Foto Gian Gopal" class="profile-picture">
+    <div class="profile-info">
+        <h1>Gian Gofalludhin</h1>
+        <p>Email: giangofalludhin@gmail.com</p>
     </div>
+    <div class="button-container">
+        <button class="button" onclick="redirectToLink()">Kirim Pesan</button>
+    </div>
+</div>
+
+<script>
+    function redirectToLink() {
+        window.location.href = "https://ngl.link/gyngfldhn2";
+    }
+</script>
 
 </body>
 </html>
